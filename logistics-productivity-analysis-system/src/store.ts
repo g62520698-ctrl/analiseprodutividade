@@ -194,7 +194,7 @@ export const useStore = create<AppStore>((set) => ({
     notifications: [
       { ...item, id: String(++notifCounter), timestamp: Date.now(), read: false },
       ...s.notifications,
-    ].slice(0, 100),
+    ].slice(0, 15),
   })),
   markNotificationRead: (id) => set((s) => ({
     notifications: s.notifications.map((n) => n.id === id ? { ...n, read: true } : n),
