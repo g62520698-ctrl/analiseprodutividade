@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-900: #080816;
+  --color-dark-800: #0d0d22;
+  --color-dark-700: #131330;
+  --color-dark-600: #1a1a42;
+  --color-dark-500: #252558;
+  --color-neon-cyan: #00d4ff;
+  --color-neon-purple: #8b5cf6;
+  --color-neon-green: #10b981;
+  --color-neon-amber: #f59e0b;
+  --color-neon-red: #ef4444;
+  --color-neon-pink: #ec4899;
+  --color-neon-blue: #3b82f6;
+  --color-light-bg: #f0f2f5;
+  --color-light-surface: #ffffff;
+  --color-light-border: #e2e8f0;
+  --color-light-text: #1e293b;
+  --color-light-muted: #64748b;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: #252558; border-radius: 3px; }
+*::-webkit-scrollbar-thumb:hover { background: #353570; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark theme (default) */
+.theme-dark {
+  --bg-primary: #080816;
+  --bg-secondary: #0d0d22;
+  --bg-tertiary: #131330;
+  --bg-card: #0d0d22;
+  --bg-input: #131330;
+  --border-color: #1a1a42;
+  --border-hover: #252558;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  color: #f1f5f9;
+  background: #080816;
+}
+
+.theme-dark *::-webkit-scrollbar-thumb { background: #252558; }
+
+/* Light theme */
+.theme-light {
+  --bg-primary: #f0f2f5;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-input: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  color: #0f172a;
+  background: #f0f2f5;
+}
+
+.theme-light *::-webkit-scrollbar-thumb { background: #cbd5e1; }
+.theme-light *::-webkit-scrollbar-track { background: #f1f5f9; }
+
+/* Glow card effect */
+.glow-card {
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  transition: all 0.3s ease;
+}
+.glow-card:hover {
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.06);
+}
+.theme-light .glow-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Recharts */
+.recharts-tooltip-wrapper { outline: none !important; }
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.6); }
+}
