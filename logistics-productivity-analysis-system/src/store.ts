@@ -14,20 +14,7 @@ function secondsToTime(totalSeconds: number): string {
   return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
 }
 
-const defaultOperators: Operator[] = [
-  { id: 'op1', name: 'Carlos Silva', module: 'separacao' },
-  { id: 'op2', name: 'Ana Souza', module: 'separacao' },
-  { id: 'op3', name: 'João Pereira', module: 'separacao' },
-  { id: 'op4', name: 'Maria Santos', module: 'separacao' },
-  { id: 'op5', name: 'Pedro Lima', module: 'separacao' },
-  { id: 'op6', name: 'Marcelo Costa', module: 'separacao' },
-  { id: 'op7', name: 'Henrique Rocha', module: 'separacao' },
-  { id: 'op8', name: 'Lucas Oliveira', module: 'ressuprimento' },
-  { id: 'op9', name: 'Beatriz Almeida', module: 'ressuprimento' },
-  { id: 'op10', name: 'Rafael Ferreira', module: 'ressuprimento' },
-  { id: 'op11', name: 'Juliana Martins', module: 'ressuprimento' },
-  { id: 'op12', name: 'Fernando Souza', module: 'ressuprimento' },
-];
+const defaultOperators: Operator[] = [];
 
 function generateMockTasks(): { sep: Task[]; res: Task[] } {
   const sep: Task[] = [];
