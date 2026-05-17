@@ -179,8 +179,8 @@ export const useStore = create<AppStore>((set) => ({
   setFilters: (data) => set((s) => ({ filters: { ...s.filters, ...data } })),
 
   settings: {
-    theme: 'dark', soundEnabled: false, notificationsEnabled: true,
-    browserNotifications: false, realtimeEnabled: false, calcMode: 'volumes',
+    theme: 'dark', soundEnabled: true, notificationsEnabled: true,
+    browserNotifications: true, realtimeEnabled: true, calcMode: 'volumes',
   },
   setSettingsDirect: (settings) => set((s) => ({ settings: { ...s.settings, ...settings } })),
   updateSettings: (data) => set((s) => ({ settings: { ...s.settings, ...data } })),
