@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useStore } from '../store';
 import { checkRealtimeIdleStatus } from '../utils';
 
