@@ -232,3 +232,4 @@ removeShownAlert: (id) =>
       shownAlerts: updated,
     };
   }),
+}));
