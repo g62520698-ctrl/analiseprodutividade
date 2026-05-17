@@ -23,9 +23,28 @@ function FirebaseProvider({ children }: { children: React.ReactNode }) {
   const { initFirebase } = useFirebaseSync();
   useRealtimeIdleMonitor(); // Checks every 30s for real idle states
 
-  useEffect(() => {
-    initFirebase();
-  }, [initFirebase]);
+ useEffect(() => {
+  initFirebase();
+
+  // ativa configurações padrão ao iniciar
+  useStore.setState((s) => ({
+    settings: {
+      ...s.settings,
+      soundEnabled: true,
+      browserNotifications: true,
+      realtimeEnabled: true,
+    }
+  }));
+
+  // solicita permissão do navegador
+  if (
+    'Notification' in window &&
+    Notification.permission === 'default'
+  ) {
+    Notification.requestPermission();
+  }
+
+}, [initFirebase]);
 
   return <>{children}</>;
 }
