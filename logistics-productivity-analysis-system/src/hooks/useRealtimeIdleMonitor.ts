@@ -74,8 +74,8 @@ export function useRealtimeIdleMonitor() {
 
         // If operator returned to ACTIVE, clear the alert key so future idle will trigger again
         if (s.state === 'ACTIVE') {
-          prevAlertIds.current.delete(`${s.operatorId}-IDLE`);
-          prevAlertIds.current.delete(`${s.operatorId}-ATTENTION`);
+          state.removeShownAlert(`${s.operatorId}-IDLE`);
+          state.removeShownAlert(`${s.operatorId}-ATTENTION`);
         }
       }
     };
