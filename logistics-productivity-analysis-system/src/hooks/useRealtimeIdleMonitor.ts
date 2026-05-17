@@ -40,7 +40,7 @@ export function useRealtimeIdleMonitor() {
       for (const s of statuses) {
         const alertKey = `${s.operatorId}-${s.state}`;
         if ((s.state === 'IDLE' || s.state === 'ATTENTION') && !state.shownAlerts.has(alertKey)) {
-          prevAlertIds.current.add(alertKey);
+          state.markAlertShown(alertKey);
 
           const isCritical = s.state === 'IDLE';
           const elapsedMin = Math.round(s.elapsedSeconds / 60);
