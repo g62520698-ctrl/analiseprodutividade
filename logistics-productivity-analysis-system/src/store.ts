@@ -209,5 +209,26 @@ export const useStore = create<AppStore>((set) => ({
   clearNotifications: () => set({ notifications: [] }),
 
   realtimeIdleStatuses: [],
-  setRealtimeIdleStatuses: (statuses) => set({ realtimeIdleStatuses: statuses }),
-}));
+setRealtimeIdleStatuses: (statuses) => set({ realtimeIdleStatuses: statuses }),
+
+shownAlerts: new Set(),
+
+markAlertShown: (id) =>
+  set((s) => {
+    const updated = new Set(s.shownAlerts);
+    updated.add(id);
+
+    return {
+      shownAlerts: updated,
+    };
+  }),
+
+removeShownAlert: (id) =>
+  set((s) => {
+    const updated = new Set(s.shownAlerts);
+    updated.delete(id);
+
+    return {
+      shownAlerts: updated,
+    };
+  }),
