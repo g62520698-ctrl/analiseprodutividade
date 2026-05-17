@@ -21,7 +21,6 @@ import { checkRealtimeIdleStatus } from '../utils';
  */
 export function useRealtimeIdleMonitor() {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const prevAlertIds = useRef(new Set<string>());
 
   useEffect(() => {
     const check = () => {
