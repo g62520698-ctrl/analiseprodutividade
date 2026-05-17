@@ -39,7 +39,7 @@ export function useRealtimeIdleMonitor() {
       // Generate notifications for NEW idle/attention states only
       for (const s of statuses) {
         const alertKey = `${s.operatorId}-${s.state}`;
-        if ((s.state === 'IDLE' || s.state === 'ATTENTION') && !prevAlertIds.current.has(alertKey)) {
+        if ((s.state === 'IDLE' || s.state === 'ATTENTION') && !state.shownAlerts.has(alertKey)) {
           prevAlertIds.current.add(alertKey);
 
           const isCritical = s.state === 'IDLE';
