@@ -84,10 +84,9 @@ export function useRealtimeIdleMonitor() {
     check();
 
     // Then every 30 seconds
-    intervalRef.current = setInterval(check, 30000);
+    const interval = setInterval(check, 30000);
 
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+return () => clearInterval(interval);
     };
   }, []);
 }
