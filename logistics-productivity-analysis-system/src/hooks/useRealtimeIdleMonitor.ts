@@ -20,7 +20,6 @@ import { checkRealtimeIdleStatus } from '../utils';
  * - OFF_SHIFT: Outside shift hours (not reported)
  */
 export function useRealtimeIdleMonitor() {
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const check = () => {
