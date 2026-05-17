@@ -121,6 +121,10 @@ interface AppStore {
 
   realtimeIdleStatuses: IdleStatus[];
   setRealtimeIdleStatuses: (statuses: IdleStatus[]) => void;
+
+shownAlerts: Set<string>;
+markAlertShown: (id: string) => void;
+removeShownAlert: (id: string) => void;
 }
 
 export const useStore = create<AppStore>((set) => ({
